@@ -1,0 +1,55 @@
+class Animal {
+protected:
+string name;
+public:
+Animal(string n) {
+name = n;
+}
+};
+
+class Dog : public Animal {
+public:
+Dog(string n) : Animal(n) {}
+
+void run(int distance) {
+    cout << name << " бегает на расстояние " << distance << " метров" << endl;
+}
+
+void swim(int distance) {
+    if (distance <= 10) {
+        cout << name << " плавает на расстояние " << distance << " метров" << endl;
+    } else {
+        cout << name << " не может проплыть заданную дистанцию" << endl;
+    }
+}
+};
+
+class Cat : public Animal {
+public:
+Cat(string n) : Animal(n) {}
+
+void run(int distance) {
+    cout << name << " бегает на расстояние " << distance << " метров" << endl;
+}
+
+void jump(int distance) {
+    if (distance <= 2) {
+        cout << name << " прыгает на расстояние " << distance << " метров" << endl;
+    } else {
+        cout << name << " не может прыгнуть заданную дистанцию" << endl;
+    }
+}
+};
+
+int main() {
+Dog dog("Бобик");
+Cat cat("Мурзик");
+dog.run(5);
+dog.swim(8);
+cat.run(3);
+cat.jump(1);
+
+cout << "1 Кот, 1 Собака, 2 Животных" << endl;
+
+return 0;
+}
